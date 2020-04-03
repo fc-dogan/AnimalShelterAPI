@@ -249,11 +249,13 @@ _No known bugs at this time._
 * .Net Core 2.2
 * ASP.NET Core MVC
 * MySQL, MySQL Workbench
-* Entity Framework Core
+* Entity Framework Core 2.2
+* ASP.NET Core Razor 2.2
+* ASP.NET Core Mvc Versioning 3.1.1
 * RestSharp
 * Newtonsoft.Json 
 * Swagger
-<!-- * JSON Web Token Authentication -->
+* NSwag ASP.NET Core 13.3.0
 
 ### License
 
