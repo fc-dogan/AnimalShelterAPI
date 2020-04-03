@@ -149,7 +149,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
 
 ## Swagger
-This application is equipped with Swagger. To testing this API, go to "http://localhost:5000/swagger/index.html" in your browser while running the application.
+This application is equipped with Swagger. To testing this API, go to "http://localhost:5000/swagger/index.html" in your browser while running the application. (apiVersion (1) is required.)
 
 ## Setup/Installation Requirements
 
