@@ -20,13 +20,13 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
 ## API Endpoints
 
-## Get list of Animals
-### Request
+### Get list of Animals
+#### Request
 `GET /animals/`
 
    http://localhost:5000/api/animals/
 
-### Response
+#### Response
     {
         "animalId": 1,
         "name": "Alfie",
@@ -42,13 +42,13 @@ An API project that allows users to Create, Read, Update, and Delete animals and
         "gender": "Female"
     } 
 
-## Get a specific Animal
-### Request
+### Get a specific Animal
+#### Request
 `GET /animals/id`
 
    http://localhost:5000/api/animals/1
 
-### Response
+#### Response
     {
         "animalId": 1,
         "name": "Alfie",
@@ -57,15 +57,15 @@ An API project that allows users to Create, Read, Update, and Delete animals and
         "gender": "Male"
     }
 
-## Create a new Animal
+### Create a new Animal
 
-### Request
+#### Request
 
 `POST /animal/`
 
     http://localhost:5000/api/animals
 
-### Request body
+#### Request body
     {
       "animalId": 3,
       "name": "Spike",
@@ -74,15 +74,15 @@ An API project that allows users to Create, Read, Update, and Delete animals and
       "gender": "Female"
     }
 
-## Edit an Animal's information
+### Edit an Animal's information
 
-### Request
+#### Request
 
 `PUT /thing/id`
 
    PUT http://localhost:5000/api/animals/3
 
-### Request Body
+#### Request Body
     {
       "animalId": 3,
       "name": "Spike",
@@ -91,29 +91,32 @@ An API project that allows users to Create, Read, Update, and Delete animals and
       "gender": "Male"
     }
 
-## Delete an Animal
+### Delete an Animal
 
-### Request
+#### Request
 
 `DELETE /animals/id`
 
    DELETE http://localhost:5000/api/animal/3
 
-### Response
+#### Response
 
     Status: 200 OK
     
-## Get a non-existent Animal
+### Get a non-existent Animal
 
-### Request
+#### Request
 
 `GET /animals/id`
 
    http://localhost:5000/api/animals/9999
 
-### Response
+#### Response
 
     Status: 404 Not Found
+
+## Swagger
+This application is equipped with Swagger. To testing this API, go to "http://localhost:5000/swagger/index.html" in your browser while running the application.
 
 ## Setup/Installation Requirements
 
@@ -234,7 +237,7 @@ _No known bugs at this time._
 * RestSharp
 * Newtonsoft.Json 
 * Swagger
-* JSON Web Token Authentication
+<!-- * JSON Web Token Authentication -->
 
 ### License
 
