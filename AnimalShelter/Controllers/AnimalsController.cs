@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AnimalShelter.Controllers
 {
   [ApiVersion("1.0")] 
-  [Route("api/[controller]")]
+  [Route("api/v{apiVersion}/[controller]")]
   [ApiController]
   public class AnimalsController : ControllerBase
   {
