@@ -1,6 +1,6 @@
 # _Animal Shelter API _
 
-####  An ASP.NET API for a local animal shelter  , April 3, 2020_
+####  An ASP.NET API for a local animal shelter (version 1.0) , April 3, 2020_
 
 #### By _**Fatma C. Dogan**_
 
@@ -21,10 +21,11 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 ## API Endpoints
 
 ### Get list of Animals
+ Only accepts requests that specify a version number.
 #### Request
 `GET /animals/`
 
-   http://localhost:5000/api/animals/
+   http://localhost:5000/api/v1/animals/
 
 #### Response
     {
@@ -46,7 +47,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 #### Request
 `GET /animals/id`
 
-   http://localhost:5000/api/animals/1
+   http://localhost:5000/api/v1/animals/1
 
 #### Response
     {
@@ -57,13 +58,28 @@ An API project that allows users to Create, Read, Update, and Delete animals and
         "gender": "Male"
     }
 
+### GET animals by type, age or gender
+#### Request
+`GET /animals/id`
+
+   http://localhost:5000/api/v1/animals?type=cat&age=6&gender=female
+
+#### Response
+    {
+        "animalId": 2,
+        "name": "Cheetah",
+        "type": "Cat",
+        "age": 6,
+        "gender": "Female"
+    }
+
 ### Create a new Animal
 
 #### Request
 
 `POST /animal/`
 
-    http://localhost:5000/api/animals
+    http://localhost:5000/api/v1/animals
 
 #### Request body
     {
@@ -80,7 +96,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
 `PUT /thing/id`
 
-   PUT http://localhost:5000/api/animals/3
+   PUT http://localhost:5000/api/v1/animals/3
 
 #### Request Body
     {
@@ -97,7 +113,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
 `DELETE /animals/id`
 
-   DELETE http://localhost:5000/api/animal/3
+   DELETE http://localhost:5000/api/v1/animal/3
 
 #### Response
 
@@ -109,7 +125,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
 `GET /animals/id`
 
-   http://localhost:5000/api/animals/9999
+   http://localhost:5000/api/v1/animals/9999
 
 #### Response
 
