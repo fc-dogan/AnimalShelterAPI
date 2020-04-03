@@ -11,17 +11,18 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
 ## Specifications user stories
 
-* A user is able to GET a list of animals.
-* A user is able to GET a specific animal information based on AnimalId.
-* A user is able to GET animals by type, age or gender.
-* A user is able to POST a new animal in the database.
-* A user is able to PUT (edit) an existing animal information in the database.
-* A user is able to DELETE an existing animal information in the database.
+1. A user is able to GET (read) a list of animals.
+2. A user is able to GET a specific animal information based on AnimalId.
+3. A user is able to GET animals by type, age or gender.
+4. A user is able to POST (create) a new animal in the database.
+5. A user is able to PUT (update) an existing animal information in the database.
+6. A user is able to DELETE an existing animal information in the database.
+7. A user is able to GET a random animal information.
 
 ## API Endpoints
 
-### Get list of Animals
- Only accepts requests that specify a version number.
+### 1. Get list of Animals
+ Only accepts requests that specify a version number (v1).
 #### Request
 `GET /animals/`
 
@@ -43,7 +44,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
         "gender": "Female"
     } 
 
-### Get a specific Animal
+### 2. Get a specific Animal
 #### Request
 `GET /animals/id`
 
@@ -58,7 +59,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
         "gender": "Male"
     }
 
-### GET animals by type, age or gender
+### 3. GET animals by type, age or gender
 #### Request
 `GET /animals/id`
 
@@ -73,7 +74,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
         "gender": "Female"
     }
 
-### Create a new Animal
+### 4. Create a new Animal
 
 #### Request
 
@@ -90,7 +91,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
       "gender": "Female"
     }
 
-### Edit an Animal's information
+### 5. Edit an Animal's information
 
 #### Request
 
@@ -107,7 +108,7 @@ An API project that allows users to Create, Read, Update, and Delete animals and
       "gender": "Male"
     }
 
-### Delete an Animal
+### 6. Delete an Animal
 
 #### Request
 
@@ -119,7 +120,22 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
     Status: 200 OK
     
-### Get a non-existent Animal
+### 7. Get a random Animal
+#### Request
+`GET /animals/random`
+
+   http://localhost:5000/api/v1/animals/random
+
+#### Response
+    {
+      "animalId": 5,
+      "name": "Leila",
+      "type": "Dog",
+      "age": 2,
+      "gender": "Female"
+    }
+
+### 8. Get a non-existent Animal
 
 #### Request
 
@@ -129,7 +145,8 @@ An API project that allows users to Create, Read, Update, and Delete animals and
 
 #### Response
 
-    Status: 404 Not Found
+    Status: 204 No Content
+
 
 ## Swagger
 This application is equipped with Swagger. To testing this API, go to "http://localhost:5000/swagger/index.html" in your browser while running the application.
@@ -189,7 +206,7 @@ _Download Manually:_
 * Click the green "Clone or Download" button.
 * Click "Download ZIP".
 * Click downloaded file to unzip.
-* Open folder.
+* Open folder (AnimalShelterAPI).
 
 _In Terminal:_
 
@@ -234,6 +251,7 @@ _To run this application:_
   dotnet run
   ```
    Note: To exit, simply press ```Ctrl + C```
+
 * access the [Swagger UI](http://localhost:5000/swagger/index.html#/Reviews) for testing this API
 
 
@@ -251,9 +269,9 @@ _No known bugs at this time._
 * MySQL, MySQL Workbench
 * Entity Framework Core 2.2
 * ASP.NET Core Razor 2.2
-* ASP.NET Core Mvc Versioning 3.1.1
 * RestSharp
 * Newtonsoft.Json 
+* ASP.NET Core Mvc Versioning 3.1.1
 * Swagger
 * NSwag ASP.NET Core 13.3.0
 
