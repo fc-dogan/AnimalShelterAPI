@@ -78,5 +78,14 @@ namespace AnimalShelter.Controllers
       _db.SaveChanges();
     }
 
+    [HttpGet("random")]
+    public ActionResult<Animal> Random ()
+    {
+      List<Animal> animals = _db.Animals.ToList();
+      var rand = new Random();
+      int random = rand.Next(0, animals.Count-1);
+      return animals[random];
+    }
+
   }
 }
