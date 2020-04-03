@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace AnimalShelter.Controllers
 {
+  [ApiVersion("1.0")] 
   [Route("api/[controller]")]
   [ApiController]
   public class AnimalsController : ControllerBase
