@@ -32,7 +32,22 @@ namespace AnimalShelter
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Register the Swagger services
-            services.AddSwaggerDocument();
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "Animal Shelter API";
+                    document.Info.Description = "A simple ASP.NET Core web API";
+                    document.Info.TermsOfService = "None";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "Fatma Dogan",
+                        Email = string.Empty,
+                        Url = "http://localhost:5000"
+                    };
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +66,7 @@ namespace AnimalShelter
             // Register the Swagger generator and the Swagger UI middlewares
             app.UseOpenApi();
             app.UseSwaggerUi3();
-            
+
             // app.UseHttpsRedirection();
             app.UseMvc();
         }
