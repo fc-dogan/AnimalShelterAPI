@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Cors;
 
 namespace AnimalShelter.Controllers
 {
@@ -48,6 +48,7 @@ namespace AnimalShelter.Controllers
 
     // POST api/animals
     [HttpPost]
+    [EnableCors("MyPolicy")]
     public void Post([FromBody] Animal animal)
     {
       _db.Animals.Add(animal);
@@ -71,6 +72,7 @@ namespace AnimalShelter.Controllers
     }
     // DELETE api/animals/5
     [HttpDelete("{id}")]
+    [EnableCors("MyPolicy")]
     public void Delete(int id)
     {
       var animalToDelete = _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
